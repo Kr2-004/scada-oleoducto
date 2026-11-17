@@ -136,6 +136,7 @@ def conectar_mqtt():
         import paho.mqtt.client as mqtt
         cliente = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, client_id="sim-te01")
         cliente.will_set(MQTT_TOPIC + "/estado", "OFFLINE", qos=1, retain=True)
+        cliente.username_pw_set("admin", "password")
         cliente.connect(MQTT_HOST, MQTT_PORT, keepalive=30)
     except (ImportError, OSError) as error:
         print("MQTT no disponible (%s); sigo solo con Modbus." % error)

@@ -1,0 +1,121 @@
+{
+  "tags": [
+    {
+      "name": "Pump",
+      "parameters": {
+        "CmdCoil": {
+          "dataType": "Integer"
+        },
+        "Device": {
+          "dataType": "String"
+        },
+        "FaultDI": {
+          "dataType": "Integer"
+        },
+        "RunDI": {
+          "dataType": "Integer"
+        }
+      },
+      "tagType": "UdtType",
+      "tags": [
+        {
+          "dataType": "Boolean",
+          "name": "Cmd",
+          "tagType": "AtomicTag",
+          "valueSource": "opc"
+        },
+        {
+          "dataType": "Boolean",
+          "name": "Fault",
+          "tagType": "AtomicTag",
+          "valueSource": "opc"
+        },
+        {
+          "dataType": "Float4",
+          "name": "RunHours",
+          "tagType": "AtomicTag",
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Boolean",
+          "name": "Run",
+          "tagType": "AtomicTag",
+          "valueSource": "opc"
+        },
+        {
+          "dataType": "Boolean",
+          "name": "Mismatch",
+          "tagType": "AtomicTag",
+          "valueSource": "expr"
+        }
+      ]
+    },
+    {
+      "name": "Transmitter",
+      "parameters": {
+        "Address": {
+          "dataType": "String"
+        },
+        "Device": {
+          "dataType": "String"
+        },
+        "MaxRange": {
+          "dataType": "Float"
+        },
+        "TagGroup": {
+          "dataType": "String"
+        },
+        "Unit": {
+          "dataType": "String"
+        }
+      },
+      "tagType": "UdtType",
+      "tags": [
+        {
+          "dataType": "Float4",
+          "name": "PV",
+          "opcItemPath": {
+            "bindType": "parameter",
+            "binding": "[{Device}]{Address}"
+          },
+          "opcServer": "Ignition OPC UA Server",
+          "tagGroup": {
+            "bindType": "parameter",
+            "binding": "{TagGroup}"
+          },
+          "tagType": "AtomicTag",
+          "valueSource": "opc"
+        },
+        {
+          "dataType": "Float4",
+          "name": "SP_L",
+          "tagType": "AtomicTag",
+          "value": 1,
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Float4",
+          "name": "SP_HH",
+          "tagType": "AtomicTag",
+          "value": 1,
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Float4",
+          "name": "SP_H",
+          "tagType": "AtomicTag",
+          "value": 1,
+          "valueSource": "memory"
+        },
+        {
+          "dataType": "Float4",
+          "name": "SP_LL",
+          "tagType": "AtomicTag",
+          "value": 1,
+          "valueSource": "memory"
+        }
+      ],
+      "typeId": ""
+    }
+  ]
+}

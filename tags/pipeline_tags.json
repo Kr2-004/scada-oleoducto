@@ -1,0 +1,320 @@
+{
+  "name": "Pipeline",
+  "tagType": "Folder",
+  "tags": [
+    {
+      "name": "Testing Tags",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "MQTT",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "dataType": "Float4",
+              "name": "Test_PT_201",
+              "sourceTagPath": "[MQTT Engine]oleoducto/TE-01/PT_201",
+              "tagType": "AtomicTag",
+              "valueSource": "reference"
+            },
+            {
+              "dataType": "Float4",
+              "name": "Test_FT_201",
+              "sourceTagPath": "[MQTT Engine]oleoducto/TE-01/FT_201",
+              "tagType": "AtomicTag",
+              "valueSource": "reference"
+            },
+            {
+              "dataType": "Float4",
+              "name": "Test_LT_201",
+              "sourceTagPath": "[MQTT Engine]oleoducto/TE-01/LT_201",
+              "tagType": "AtomicTag",
+              "valueSource": "reference"
+            },
+            {
+              "dataType": "Float4",
+              "name": "Test_FQ_201",
+              "sourceTagPath": "[MQTT Engine]oleoducto/TE-01/FQ_201",
+              "tagType": "AtomicTag",
+              "valueSource": "reference"
+            }
+          ]
+        },
+        {
+          "name": "Modbus",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "dataType": "Float4",
+              "name": "Test_FT101",
+              "opcItemPath": "[PS01]HRF7",
+              "opcServer": "Ignition OPC UA Server",
+              "tagType": "AtomicTag",
+              "valueSource": "opc"
+            },
+            {
+              "dataType": "Float4",
+              "name": "Test_LT01",
+              "opcItemPath": "[PS01]HRF1",
+              "opcServer": "Ignition OPC UA Server",
+              "tagType": "AtomicTag",
+              "valueSource": "opc"
+            },
+            {
+              "dataType": "Boolean",
+              "name": "Test_P101_Run",
+              "opcItemPath": "[PS01]DI1",
+              "opcServer": "Ignition OPC UA Server",
+              "tagType": "AtomicTag",
+              "valueSource": "opc"
+            },
+            {
+              "dataType": "Boolean",
+              "name": "Test_P101_Cmd",
+              "opcItemPath": "[PS01]C1",
+              "opcServer": "Ignition OPC UA Server",
+              "tagType": "AtomicTag",
+              "valueSource": "opc"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PS-01",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "PT-102",
+          "parameters": {
+            "Address": {
+              "dataType": "String",
+              "value": "HRF5"
+            },
+            "Device": {
+              "dataType": "String",
+              "value": "PS01"
+            },
+            "MaxRange": {
+              "dataType": "Float",
+              "value": 4000.0
+            },
+            "TagGroup": {
+              "dataType": "String",
+              "value": "Fast"
+            },
+            "Unit": {
+              "dataType": "String",
+              "value": "kPa"
+            }
+          },
+          "tagType": "UdtInstance",
+          "tags": [
+            {
+              "name": "SP_H",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "SP_HH",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "SP_LL",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "PV",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "SP_L",
+              "tagType": "AtomicTag"
+            }
+          ],
+          "typeId": "Transmitter"
+        },
+        {
+          "name": "PT-101",
+          "parameters": {
+            "Address": {
+              "dataType": "String",
+              "value": "HRF3"
+            },
+            "Device": {
+              "dataType": "String",
+              "value": "PS01"
+            },
+            "MaxRange": {
+              "dataType": "Float",
+              "value": 500.0
+            },
+            "TagGroup": {
+              "dataType": "String",
+              "value": "Fast"
+            },
+            "Unit": {
+              "dataType": "String",
+              "value": "kPa"
+            }
+          },
+          "tagType": "UdtInstance",
+          "tags": [
+            {
+              "name": "SP_L",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "PV",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "SP_HH",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "SP_LL",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "SP_H",
+              "tagType": "AtomicTag"
+            }
+          ],
+          "typeId": "Transmitter"
+        },
+        {
+          "name": "FT-101",
+          "parameters": {
+            "Address": {
+              "dataType": "String",
+              "value": "HRF7"
+            },
+            "Device": {
+              "dataType": "String",
+              "value": "PS01"
+            },
+            "MaxRange": {
+              "dataType": "Float",
+              "value": 400.0
+            },
+            "TagGroup": {
+              "dataType": "String",
+              "value": "Fast"
+            },
+            "Unit": {
+              "dataType": "String",
+              "value": "m3/h"
+            }
+          },
+          "tagType": "UdtInstance",
+          "tags": [
+            {
+              "name": "PV",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "SP_L",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "SP_HH",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "SP_LL",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "SP_H",
+              "tagType": "AtomicTag"
+            }
+          ],
+          "typeId": "Transmitter"
+        },
+        {
+          "name": "LT-101",
+          "parameters": {
+            "Address": {
+              "dataType": "String",
+              "value": "HRF1"
+            },
+            "Device": {
+              "dataType": "String",
+              "value": "PS01"
+            },
+            "MaxRange": {
+              "dataType": "Float",
+              "value": 100.0
+            },
+            "TagGroup": {
+              "dataType": "String",
+              "value": "Slow"
+            },
+            "Unit": {
+              "dataType": "String",
+              "value": "%"
+            }
+          },
+          "tagType": "UdtInstance",
+          "tags": [
+            {
+              "name": "SP_L",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "PV",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "SP_H",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "SP_HH",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "SP_LL",
+              "tagType": "AtomicTag"
+            }
+          ],
+          "typeId": "Transmitter"
+        }
+      ]
+    },
+    {
+      "name": "TE-01",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "dataType": "Float4",
+          "name": "FT_201",
+          "sourceTagPath": "[MQTT Engine]oleoducto/TE-01/FT_201",
+          "tagType": "AtomicTag",
+          "valueSource": "reference"
+        },
+        {
+          "dataType": "Float4",
+          "name": "FQ_201",
+          "sourceTagPath": "[MQTT Engine]oleoducto/TE-01/FQ_201",
+          "tagType": "AtomicTag",
+          "valueSource": "reference"
+        },
+        {
+          "dataType": "Float4",
+          "name": "PT_201",
+          "sourceTagPath": "[MQTT Engine]oleoducto/TE-01/PT_201",
+          "tagType": "AtomicTag",
+          "valueSource": "reference"
+        },
+        {
+          "dataType": "Float4",
+          "name": "LT_201",
+          "sourceTagPath": "[MQTT Engine]oleoducto/TE-01/LT_201",
+          "tagType": "AtomicTag",
+          "valueSource": "reference"
+        }
+      ]
+    }
+  ]
+}
